@@ -23,3 +23,15 @@ def maxArea(height):
 
 
 print(maxArea(nums))
+
+
+def Containwatertwo(nums):
+    L,R,width,res=0,len(nums)-1,len(nums)-1,0
+    for w in range(width,0,-1):
+        if nums[L]<nums[R]:
+            res,L=max(res,nums[L]*w),L+1
+        else:
+            res,R=max(res,nums[R]*w),R-1
+    return res
+
+print(Containwatertwo(nums))
